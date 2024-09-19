@@ -41,7 +41,7 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 	dest[len2 + i] = '\0';
 	return (len2 + ft_strlen(src));
 }
-
+/*
 #include <stdio.h>
 #include <string.h>
 int main()
@@ -52,3 +52,4 @@ int main()
 	printf("%s \n %u \n", dest, ft_strlcat(dest, str, 2));
 	// printf("%s \n", dest);
 }
+*/
