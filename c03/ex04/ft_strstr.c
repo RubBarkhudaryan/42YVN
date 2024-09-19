@@ -10,15 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
-
 char	*ft_strstr(char *str, char *find);
 
 char	*ft_strstr(char *str, char *find)
 {
 	int	i;
 	int	j;
+	int	boolflag;
 
 	i = 0;
 	if (find[0] == '\0')
@@ -28,20 +26,27 @@ char	*ft_strstr(char *str, char *find)
 		if (str[i] == find[0])
 		{
 			j = 1;
+			boolflag = 1;
 			while (find[j])
 			{
 				if (str[i + j] != find[j])
-					break ;
+					boolflag = 0;
 				++j;
 			}
-			return (&str[i]);
+			if (boolflag)
+				return (str + i);
 		}
 		++i;
 	}
-	return (0);
+	return (NULL);
 }
 
 /*
+
+//ask chat gpt to generate tricky cases to fully understand how the function works
+#include <string.h>
+#include <stdio.h>
+
 int main()
 {
 	char *str = "Hello World!";
